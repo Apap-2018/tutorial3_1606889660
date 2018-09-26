@@ -75,17 +75,6 @@ public class PilotController {
 	
 	@RequestMapping(value = {"/pilot/delete/id", "pilot/delete/{id}"})
 	public String deleteWithPath(@PathVariable Optional<String> id,	Model model) {
-		/*List<PilotModel> archive = pilotService.getPilotList();
-		if (id.isPresent()) {
-			for (int i = 0; i < archive.size(); i++) {
-				if(archive.get(i).getId().equalsIgnoreCase(id.get())) {
-					archive.remove(i);
-					model.addAttribute("deleted", true);
-					return "delete";
-				}
-			}
-			
-		}*/
 		if(id.isPresent()) {
 			PilotModel deleted = pilotService.removePilot(id.get());
 			if (deleted!=null) {
