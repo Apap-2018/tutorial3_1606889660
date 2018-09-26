@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>View Detail</title>
+	</head>
+	<body>
+		<div th:if="${pilot}">
+			<h3 th:text="${pilot.id}"></h3>
+			<h3 th:text="${pilot.licenseNumber}"></h3>
+			<h3 th:text="${pilot.name}"></h3>
+			<h3 th:text="${pilot.flyHour}"></h3>
+		</div>
+		<div th:unless="${pilot}">
+			<h3>nomor licenseNumber kosong atau tidak ditemukan</h3>
+		</div>
+		
+	</body>
+</html>
